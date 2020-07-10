@@ -1,0 +1,10 @@
+{
+  "employee": {
+    "empId": "12",
+    "name": "Shyam",
+    "email": "shyamjaiswal@gmail.com",
+    "salary": "600000",
+    "married": "true",
+    "phone": "9876543210"
+  }
+}

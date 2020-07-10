@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="output_emp" format="json">
+      <types:shape format="weave" example="examples/project_2_out-1."><![CDATA[%dw 2.0
+
+type output_emp = {|
+  employee: {|
+    empId: Number {"typeId": "int"}, 
+    name: String, 
+    email: String, 
+    salary: Number {"typeId": "int"}, 
+    married: Boolean, 
+    phone: Number {"typeId": "int"}
+  |}
+|} {"example": "{\\\"employee\\\":{\\\"empId\\\":12,\\\"name\\\":\\\"richa\\\",\\\"email\\\":\\\"upadhya@gmail.com\\\",\\\"salary\\\":2500000,\\\"married\\\":true,\\\"phone\\\":15678976}}"}
+
+]]></types:shape>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#ebb34780-e7fd-4536-bf34-5b98b9091bcc">
+    <types:processor-declaration>
+      <types:output-event>
+        <types:message>
+          <types:payload type="output_emp"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>

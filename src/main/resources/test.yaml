@@ -1,0 +1,6 @@
+http:
+  port: "8082"
+  
+activeMq:
+  userName: "admin"
+  password : "![rFJ9EGpxIStsLCMcEiECgA==]"

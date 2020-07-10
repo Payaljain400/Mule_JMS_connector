@@ -1,0 +1,76 @@
+#%RAML 1.0
+title: Employee_Details
+description: Employee details 
+types:
+  employee:
+    properties:  
+      empId :
+        required: true
+        type: number
+      name :
+        required: true
+        minLength: 3
+        maxLength: 20
+        type: string
+      email:
+        required: true
+        type: string
+      salary : number
+      married : boolean 
+      phone : number
+/employee :
+  post:
+    displayName: create employee data
+    description: Create a new entry in employee details
+    headers:
+      Accept-Language:
+        type: string
+        required: true
+        example:
+          value: "en-US"
+      Content-Type:
+        required: true
+        type: string
+        example:
+          value: application/xml
+    body:
+      application/xml:
+        type: employee
+        example:  
+          <employee> 
+            <empId>12</empId>
+            <name>Shyam</name>   
+            <email>shyamjaiswal@gmail.com</email>
+            <salary>600000</salary>
+            <married>true</married>
+            <phone>9876543210</phone>
+          </employee>  
+    responses:
+      200 :
+        body:
+          application/json:
+            example:
+              {
+                "employee": 
+                {
+                  "empId": 12,
+                  "name": "richa",
+                  "email": "upadhya@gmail.com",
+                  "salary": 2500000,
+                  "married": true,
+                  "phone": 1 5678976
+                }
+             }
+      400 :
+        body:
+          application/json:
+            properties:
+              message : string
+            example:
+              {
+                message : "invalid API"
+              }  
+            
+          
+        
+

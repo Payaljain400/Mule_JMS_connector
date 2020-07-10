@@ -1,0 +1,10 @@
+{
+  employee: {
+    empId: 12,
+    name: "richa",
+    email: "upadhya@gmail.com",
+    salary: 2500000,
+    married: true,
+    phone: "1 5678976"
+  }
+}
